@@ -1,4 +1,4 @@
-package vanier.com.programmingpatternslia;
+package vanier.com.programmingpatternslia.App.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

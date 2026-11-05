@@ -1,4 +1,4 @@
-package vanier.com.programmingpatternslia;
+package vanier.com.programmingpatternslia.App.Application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
