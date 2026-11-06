@@ -31,6 +31,7 @@ public class DataBaseCore {
             if (conn != null) {
                 createInitialTables(conn);
                 initialize = true;
+                createAdminAccount();
             }
         } catch (SQLException e) {
             System.err.println("Database initialization failed: " + e.getMessage());
@@ -95,6 +96,16 @@ public class DataBaseCore {
                     + ");";
             stmt.execute(registrationTable);
 
+        }
+    }
+
+    private static void createAdminAccount() throws SQLException {
+        String sqlUSRTable = "INSERT INTO USER VALUES('ADMIN',1,'ADMIN')";
+        String sqlCRDTable = "INSERT INTO CREDENTIALS VALUES(1,'admin@admin.ca','4Dm!n')";
+        try(Connection con = DriverManager.getConnection(URL);
+            Statement stmt = con.createStatement()) {
+            stmt.execute(sqlUSRTable);
+            stmt.execute(sqlCRDTable);
         }
     }
 
