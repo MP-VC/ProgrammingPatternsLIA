@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/schema.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/src/main/java/vanier/com/programmingpatternslia/DataBase/DataBaseCore.java" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/src/main/java/vanier/com/programmingpatternslia/DataBase/Registration/RegistrationDAO.java" dialect="GenericSQL" />
   </component>
