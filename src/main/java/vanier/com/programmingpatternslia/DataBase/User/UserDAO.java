@@ -70,13 +70,42 @@ public class UserDAO {
         else throw new UserError("User not found");
     }
 
-    public void updateUser(User user) {
+    public void updateUser(User user) throws SQLException {
+        if ((user.getAge() < 0 || user.getAge() > 100) && (user.getRole().equalsIgnoreCase("ADMIN") || user.getRole().equalsIgnoreCase("PARTICIPANT"))) {
+            String sql = "UPDATE USER SET FullName = ?, Age = ?, Role = ? WHERE U_ID = ?";
+            try (Connection conn = DriverManager.getConnection(path);
+                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+                pstmt.setString(1, user.getFullName());
+                pstmt.setInt(2, user.getAge());
+                pstmt.setString(3, user.getRole());
+                pstmt.setInt(3, user.getUserId());
+
+                pstmt.executeUpdate();
+            }
+        }
+        else throw new UserError("Incorrect age or role");
     }
 
-    public void deleteUser(int userId) {
+    public void deleteUser(int userId) throws SQLException {
+        String sql = "DELETE FROM USERS WHERE U_ID = ?";
+        try (Connection conn = DriverManager.getConnection(path);
+        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            pstmt.executeUpdate();
+        }
     }
 
-    public List<User> getAllUsers() {
-        return new ArrayList<>();
+    public List<User> getAllUsers() throws SQLException {
+        List<User> users = new ArrayList<>();
+        String sql = "SELECT * FROM USERS";
+        try (Connection conn = DriverManager.getConnection(path);
+                Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                 users.add(new User(rs.getInt("U_ID"), rs.getString("FullName"), rs.getInt("Age"), rs.getString("Role")));
+            }
+        }
+        return users;
     }
 }
