@@ -1,16 +1,15 @@
 package vanier.com.programmingpatternslia.DataBase.Conference;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.io.IOError;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class ConferenceDAO {
 
     String url = "jdbc:sqlite:DataBase.db";
 
     public void addConference(Conference object){
-        String sql = "INSERT INTO Conference(Title, Capacity, C_Date, Start_Time, End_time, Location) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Conference(Title, Capacity, C_Date, Start_Time, End_Time, Location) VALUES(?, ?, ?, ?, ?, ?)";
         try(Connection con = DriverManager.getConnection(url);
             PreparedStatement pstmt = con.prepareStatement(sql)){
             pstmt.setString(1, object.getTitle());
@@ -41,18 +40,19 @@ public class ConferenceDAO {
     }
 
     public void updateConference(int c_id, String columnName, String newValue){
-        String sql = "UPDATE Conference SET ? = ? WHERE C_ID = ?";
+        String sql = "UPDATE Conference SET " + columnName + " = ? WHERE C_ID = ?";
         try(Connection con = DriverManager.getConnection(url);
             PreparedStatement pstmt = con.prepareStatement(sql)) {
-            pstmt.setString(1, columnName);
+
             if(columnName.equalsIgnoreCase("capacity")){
                 int newValueInt = Integer.parseInt(newValue);
-                pstmt.setInt(2, newValueInt);
+                pstmt.setInt(1, newValueInt);
             }
             else{
-                pstmt.setString(2, newValue);
+                pstmt.setString(1, newValue);
             }
-            pstmt.setInt(3, c_id);
+            pstmt.setInt(2, c_id);
+
             pstmt.executeUpdate();
         }
         catch(SQLException e) {
@@ -61,4 +61,77 @@ public class ConferenceDAO {
         }
 
     }
+
+    public ArrayList<Conference> getAllConferences(){
+        String sql = "SELECT * FROM Conference";
+        ArrayList<Conference> conferences = new ArrayList<>();
+
+        try (Connection con = DriverManager.getConnection(url);
+             Statement stmt = con.createStatement()) {
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                int id = rs.getInt("C_ID");
+                String title = rs.getString("Title");
+                int capacity = rs.getInt("Capacity");
+                String c_date = rs.getString("C_Date");
+                String start_Time = rs.getString("Start_Time");
+                String end_Time = rs.getString("End_Time");
+                String location = rs.getString("Location");
+                Conference c = new Conference(title,capacity,c_date, start_Time, end_Time, location);
+                conferences.add(c);
+            }
+        } catch (SQLException e) {
+            System.err.println("Database Selecting Error:" + e.getMessage());
+        }
+
+        return conferences;
+    }
+
+    public int retrieveID(String title) {
+        String sql = "SELECT C_ID FROM Conference WHERE Title = ?";
+        int c_id = 0;
+        try (Connection con = DriverManager.getConnection(url);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            pstmt.setString(1, title);
+
+            try(ResultSet rs  = pstmt.executeQuery()){
+                while(rs.next()){
+                    c_id = rs.getInt("C_ID");
+                }
+            }
+            catch(SQLException e){
+                System.err.println("Database Connection Error:" + e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Database Selecting Error:" + e.getMessage());
+        }
+        return c_id;
+    }
+
+
+    public Conference findByID(int id){
+        String sql = "SELECT * FROM Conference WHERE C_ID = ?";
+        Conference c = null;
+        try (Connection con = DriverManager.getConnection(url);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+
+           try( ResultSet rs = pstmt.executeQuery();) {
+               while (rs.next()) {
+                   String title = rs.getString("Title");
+                   int capacity = rs.getInt("Capacity");
+                   String c_date = rs.getString("C_Date");
+                   String start_Time = rs.getString("Start_Time");
+                   String end_Time = rs.getString("End_Time");
+                   String location = rs.getString("Location");
+
+                   c = new Conference(id, title, capacity, c_date, start_Time, end_Time, location);
+               }
+           }
+        } catch (SQLException e) {
+            System.err.println("Database Selecting Error:" + e.getMessage());
+        }
+        return c;
+    }
 }
+
