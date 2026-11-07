@@ -13,4 +13,12 @@ class CredentialDAOTest {
     @Test
     void getDecryptedPassword() {
     }
+
+    @Test
+    void testCreatePassword() {
+    }
+
+    @Test
+    void updatePassword() {
+    }
 }
