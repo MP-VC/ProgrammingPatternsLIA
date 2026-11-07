@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import vanier.com.programmingpatternslia.DataBase.Conference.Conference;
 import vanier.com.programmingpatternslia.DataBase.Conference.ConferenceDAO;
+import vanier.com.programmingpatternslia.Model.Conference;
 
 import java.util.ArrayList;
 

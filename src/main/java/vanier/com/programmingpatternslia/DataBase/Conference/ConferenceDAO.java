@@ -1,5 +1,7 @@
 package vanier.com.programmingpatternslia.DataBase.Conference;
 
+import vanier.com.programmingpatternslia.Model.Conference;
+
 import java.io.IOError;
 import java.sql.*;
 import java.util.ArrayList;

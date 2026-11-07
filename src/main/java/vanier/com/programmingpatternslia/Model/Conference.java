@@ -20,6 +20,15 @@ public class Conference {
         this.location = location;
     }
 
+    public Conference(String title, int capacity, String c_date, String start_time, String end_time, String location) {
+        this.title = title;
+        this.capacity = capacity;
+        this.c_date = c_date;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.location = location;
+    }
+
     public int getId() {
         return id;
     }
@@ -74,5 +83,18 @@ public class Conference {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Conference{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", capacity=" + capacity +
+                ", c_date='" + c_date + '\'' +
+                ", start_time='" + start_time + '\'' +
+                ", end_time='" + end_time + '\'' +
+                ", location='" + location + '\'' +
+                '}';
     }
 }
