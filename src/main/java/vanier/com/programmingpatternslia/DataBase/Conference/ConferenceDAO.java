@@ -1,5 +1,7 @@
 package vanier.com.programmingpatternslia.DataBase.Conference;
 
+import vanier.com.programmingpatternslia.Model.Conference;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

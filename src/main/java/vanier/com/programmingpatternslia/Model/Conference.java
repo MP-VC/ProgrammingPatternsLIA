@@ -1,4 +1,4 @@
-package vanier.com.programmingpatternslia.DataBase.Conference;
+package vanier.com.programmingpatternslia.Model;
 
 public class Conference {
 
