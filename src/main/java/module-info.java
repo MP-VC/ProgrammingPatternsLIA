@@ -17,4 +17,8 @@ module vanier.com.programmingpatternslia {
     exports vanier.com.programmingpatternslia.DataBase;
 
     exports vanier.com.programmingpatternslia.DataBase.Registration;
+
+    // Lines for testing(jUnit)
+    opens vanier.com.programmingpatternslia.DataBase.Registration to org.junit.platform.commons;
+    opens vanier.com.programmingpatternslia.Model to org.junit.platform.commons;
 }

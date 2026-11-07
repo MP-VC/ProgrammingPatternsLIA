@@ -1,3 +1,4 @@
+
 package vanier.com.programmingpatternslia.Model;
 
 public class Registration {
@@ -7,7 +8,6 @@ public class Registration {
     private int waitingList;
     private String status;
     private int waitingListPosition;
-
 
     public Registration(int registrationId, int conferenceId, int userId, int waitingList, String status, int waitingListPosition) {
         this.registrationId = registrationId;
@@ -22,4 +22,6 @@ public class Registration {
     public int getConferenceId() { return conferenceId; }
     public int getUserId() { return userId; }
     public String getStatus() { return status; }
+    public int getWaitingList() { return waitingList; }
+    public int getWaitingListPosition() { return waitingListPosition; }
 }
