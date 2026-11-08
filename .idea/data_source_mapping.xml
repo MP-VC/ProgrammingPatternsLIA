@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/vanier/com/programmingpatternslia/DataBase/Registration/RegistrationDAO.java" value="1e371b71-46ae-4db7-a0a7-3b99a9985ce4" />
+    <file url="file://$PROJECT_DIR$/src/test/java/vanier/com/programmingpatternslia/DataBase/Credential/CredentialDAOTest.java" value="1e371b71-46ae-4db7-a0a7-3b99a9985ce4" />
+  </component>
+</project>

@@ -9,7 +9,7 @@ public class User {
     String role;
 
     public User(int userId, String fullName, int age, String role) {
-       if((age < 0 || age > 100) && (role.equalsIgnoreCase("ADMIN") || role.equalsIgnoreCase("PARTICIPANT"))) {
+       if((age >= 0 && age <= 100) && (role.equalsIgnoreCase("ADMIN") || role.equalsIgnoreCase("PARTICIPANT"))) {
            this.userId = userId;
            this.fullName = fullName;
            this.age = age;

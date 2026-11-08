@@ -3,7 +3,8 @@ module vanier.com.programmingpatternslia {
     requires javafx.fxml;
     requires java.desktop;
     requires java.sql;
-
+    requires org.junit.jupiter.api;
+    requires org.junit.jupiter.engine;
     opens vanier.com.programmingpatternslia to javafx.fxml;
     exports vanier.com.programmingpatternslia;
 
