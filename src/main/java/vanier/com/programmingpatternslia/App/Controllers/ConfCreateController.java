@@ -3,7 +3,7 @@ package vanier.com.programmingpatternslia.App.Controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class ConfCreateController {
     @FXML
     private Label welcomeText;
 

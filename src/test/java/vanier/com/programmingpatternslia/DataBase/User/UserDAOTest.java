@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import vanier.com.programmingpatternslia.Model.User;
-import vanier.com.programmingpatternslia.Error.UserError;
 
 import java.nio.file.Path;
 import java.sql.Connection;
@@ -58,7 +57,7 @@ class UserDAOTest {
         try (Connection conn = DriverManager.getConnection(url);
         Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-        };
+        }
         User user = dao.getUserByEmail("Johndoe@email.com");
         assertNotNull(user);
         assertEquals("John Doe", user.getFullName());
@@ -84,4 +83,4 @@ class UserDAOTest {
         assertNotNull(dao.getAllUsers());
         assertEquals(1, dao.getAllUsers().size());
     }
-}
+ }
