@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,72 +11,60 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/27.0.1.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="vanier.com.programmingpatternslia.App.Controllers.LoginController">
+
+<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.LoginController">
     <ImageView fitHeight="400.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../assets/Background.gif"/>
+        <Image url="@../assets/Background.gif" />
     </ImageView>
     <ImageView fitHeight="425.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../assets/MenuLines.png"/>
+        <Image url="@../assets/MenuLines.png" />
     </ImageView>
     <BorderPane prefHeight="366.0" prefWidth="650.0">
         <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                <HBox layoutX="175.0" layoutY="67.0" prefHeight="250.0" prefWidth="300.0"
-                      style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 25; -fx-border-width: 5; -fx-border-radius: 25; -fx-effect: innershadow(gaussian, #C20000, 30, 0.02, 0, -15);">
+                <HBox layoutX="175.0" layoutY="67.0" prefHeight="250.0" prefWidth="300.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 25; -fx-border-width: 5; -fx-border-radius: 25; -fx-effect: innershadow(gaussian, #C20000, 30, 0.02, 0, -15);">
                     <VBox prefHeight="240.0" prefWidth="321.0">
-                        <ImageView fitHeight="83.0" fitWidth="227.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView fitHeight="83.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
                             <VBox.margin>
-                                <Insets left="42.0" top="3.0"/>
+                                <Insets left="42.0" top="3.0" />
                             </VBox.margin>
-                            <Image url="@../assets/Logo.png"/>
+                            <Image url="@../assets/Logo.png" />
                         </ImageView>
                         <HBox prefHeight="39.0" prefWidth="290.0">
                             <padding>
-                                <Insets left="30.0" top="10.0"/>
+                                <Insets left="30.0" top="10.0" />
                             </padding>
-                            <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true"
-                                       preserveRatio="true">
-                                <Image url="@../assets/IconUser.png"/>
+                            <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../assets/IconUser.png" />
                             </ImageView>
-                            <TextField fx:id="userfield" prefHeight="29.0" prefWidth="181.0"
-                                       promptText="Username"
-                                       style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: WHITE;">
+                            <TextField fx:id="userfield" prefHeight="29.0" prefWidth="181.0" promptText="Username" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: WHITE;">
                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="13.0"/>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
                                 </font>
                             </TextField>
                         </HBox>
                         <HBox prefHeight="39.0" prefWidth="290.0">
                             <padding>
-                                <Insets left="30.0" top="10.0"/>
+                                <Insets left="30.0" top="10.0" />
                             </padding>
-                            <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true"
-                                       preserveRatio="true">
-                                <Image url="@../assets/IconPass.png"/>
+                            <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../assets/IconPass.png" />
                             </ImageView>
-                            <PasswordField fx:id="passfield" prefHeight="29.0" prefWidth="181.0"
-                                           promptText="Password"
-                                           style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: WHITE;">
+                            <PasswordField fx:id="passfield" prefHeight="29.0" prefWidth="181.0" promptText="Password" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: WHITE;">
                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="13.0"/>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
                                 </font>
                             </PasswordField>
                         </HBox>
-                        <Button fx:id="Login" alignment="CENTER" contentDisplay="CENTER"
-                                mnemonicParsing="false"
-                                style="-fx-background-color: #FE1313; -fx-border-color: #E40000; -fx-border-radius: 6; -fx-background-radius: 6; -fx-effect: innershadow(gaussian, black, 10, 0.001, 0, -3);"
-                                text="Login" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="Login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #FE1313; -fx-border-color: #E40000; -fx-border-radius: 6; -fx-background-radius: 6; -fx-effect: innershadow(gaussian, black, 10, 0.001, 0, -3);" stylesheets="@CSS/signinout.css" text="Login" textAlignment="CENTER" textFill="WHITE">
                             <VBox.margin>
-                                <Insets left="85.0" top="10.0"/>
+                                <Insets left="85.0" top="10.0" />
                             </VBox.margin>
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="20.0"/>
+                                <Font name="Arial Rounded MT Bold" size="20.0" />
                             </font>
                         </Button>
                     </VBox>
