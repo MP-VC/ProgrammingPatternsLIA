@@ -1,0 +1,27 @@
+.button {
+    -fx-background-color: linear-gradient(to bottom, #FE1313, #C90000);
+    -fx-border-color: #E40000;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-effect: innershadow(gaussian, #850000, 8, 0.3, 0, -2);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF3030, #E00000);
+    -fx-border-color: #FF5050;
+    -fx-effect: dropshadow(gaussian, #FF000066, 8, 0.15, 0, 0);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-translate-y: -1;
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #A00000, #C50000);
+    -fx-border-color: #C00000;
+    -fx-effect: innershadow(gaussian, #500000, 8, 0.4, 0, 2);
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+    -fx-translate-y: 2;
+}
