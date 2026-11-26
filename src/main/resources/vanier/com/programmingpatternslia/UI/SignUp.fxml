@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,137 +12,108 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/27.0.1.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="vanier.com.programmingpatternslia.App.Controllers.SignUpController">
+
+<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.SignUpController">
     <ImageView fitHeight="400.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../assets/Background.gif"/>
+        <Image url="@../assets/Background.gif" />
     </ImageView>
     <ImageView fitHeight="425.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../assets/MenuLines.png"/>
+        <Image url="@../assets/MenuLines.png" />
     </ImageView>
     <BorderPane prefHeight="366.0" prefWidth="650.0">
         <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                <HBox layoutX="175.0" layoutY="67.0" prefHeight="260.0" prefWidth="300.0"
-                      style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 25; -fx-border-width: 5; -fx-border-radius: 25; -fx-effect: innershadow(gaussian, #C20000, 30, 0.02, 0, -10);">
+                <HBox layoutX="175.0" layoutY="67.0" prefHeight="260.0" prefWidth="300.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 25; -fx-border-width: 5; -fx-border-radius: 25; -fx-effect: innershadow(gaussian, #C20000, 30, 0.02, 0, -10);">
                     <VBox prefHeight="268.0" prefWidth="290.0">
-                        <ImageView fitHeight="83.0" fitWidth="227.0" pickOnBounds="true"
-                                   preserveRatio="true">
+                        <ImageView fitHeight="83.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
                             <VBox.margin>
-                                <Insets left="43.0"/>
+                                <Insets left="43.0" />
                             </VBox.margin>
-                            <Image url="@../assets/Logo.png"/>
+                            <Image url="@../assets/Logo.png" />
                         </ImageView>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="186.0" prefWidth="290.0"
-                                    style="-fx-background-radius: 13;" stylesheets="@CSS/scrollpane.css">
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="186.0" prefWidth="290.0" style="-fx-background-radius: 13;" stylesheets="@CSS/scrollpane.css">
                             <VBox.margin>
-                                <Insets top="12.0"/>
+                                <Insets top="12.0" />
                             </VBox.margin>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
                                 <VBox prefHeight="203.0" prefWidth="287.0">
                                     <HBox prefHeight="39.0" prefWidth="290.0">
                                         <padding>
-                                            <Insets left="30.0" top="10.0"/>
+                                            <Insets left="30.0" top="10.0" />
                                         </padding>
-                                        <ImageView fitHeight="30.0" fitWidth="68.0"
-                                                   pickOnBounds="true" preserveRatio="true">
-                                            <Image url="@../assets/IconUser.png"/>
+                                        <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../assets/IconUser.png" />
                                         </ImageView>
-                                        <TextField fx:id="userfield" prefHeight="29.0"
-                                                   prefWidth="181.0" promptText="Username"
-                                                   style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: White;">
+                                        <TextField fx:id="userfield" prefHeight="29.0" prefWidth="181.0" promptText="Username" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: White;">
                                             <font>
-                                                <Font name="Arial Rounded MT Bold"
-                                                      size="13.0"/>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </HBox>
                                     <HBox prefHeight="39.0" prefWidth="290.0">
                                         <padding>
-                                            <Insets left="30.0" top="10.0"/>
+                                            <Insets left="30.0" top="10.0" />
                                         </padding>
-                                        <ImageView fitHeight="30.0" fitWidth="68.0"
-                                                   pickOnBounds="true" preserveRatio="true">
-                                            <Image url="@../assets/IconMail.png"/>
+                                        <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../assets/IconMail.png" />
                                         </ImageView>
-                                        <TextField fx:id="mailfield" prefHeight="29.0"
-                                                   prefWidth="181.0" promptText="Email"
-                                                   style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;">
+                                        <TextField fx:id="mailfield" prefHeight="29.0" prefWidth="181.0" promptText="Email" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: white;">
                                             <font>
-                                                <Font name="Arial Rounded MT Bold"
-                                                      size="13.0"/>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </HBox>
-                                    <HBox layoutX="10.0" layoutY="50.0" prefHeight="39.0"
-                                          prefWidth="290.0">
+                                    <HBox layoutX="10.0" layoutY="50.0" prefHeight="39.0" prefWidth="290.0">
                                         <padding>
-                                            <Insets left="30.0" top="10.0"/>
+                                            <Insets left="30.0" top="10.0" />
                                         </padding>
-                                        <ImageView fitHeight="30.0" fitWidth="68.0"
-                                                   pickOnBounds="true" preserveRatio="true">
-                                            <Image url="@../assets/IconAge.png"/>
+                                        <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../assets/IconAge.png" />
                                         </ImageView>
-                                        <TextField fx:id="agefield" prefHeight="29.0"
-                                                   prefWidth="181.0" promptText="Age"
-                                                   style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: White;">
+                                        <TextField fx:id="agefield" prefHeight="29.0" prefWidth="181.0" promptText="Age" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-radius: 2; -fx-border-width: 2; -fx-text-fill: White;">
                                             <font>
-                                                <Font name="Arial Rounded MT Bold"
-                                                      size="13.0"/>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </HBox>
                                     <HBox prefHeight="39.0" prefWidth="290.0">
                                         <padding>
-                                            <Insets left="30.0" top="10.0"/>
+                                            <Insets left="30.0" top="10.0" />
                                         </padding>
-                                        <ImageView fitHeight="30.0" fitWidth="68.0"
-                                                   pickOnBounds="true" preserveRatio="true">
-                                            <Image url="@../assets/IconPass.png"/>
+                                        <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../assets/IconPass.png" />
                                         </ImageView>
-                                        <PasswordField prefHeight="29.0" prefWidth="181.0"
-                                                       promptText="Password"
-                                                       style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-background-radius: 2; -fx-border-radius: 2; -fx-text-fill: White;">
+                                        <PasswordField prefHeight="29.0" prefWidth="181.0" promptText="Password" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-background-radius: 2; -fx-border-radius: 2; -fx-text-fill: White;">
                                             <font>
-                                                <Font name="Arial Rounded MT Bold"
-                                                      size="13.0"/>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
                                             </font>
                                         </PasswordField>
                                     </HBox>
                                     <HBox prefHeight="39.0" prefWidth="290.0">
                                         <padding>
-                                            <Insets left="30.0" top="10.0"/>
+                                            <Insets left="30.0" top="10.0" />
                                         </padding>
-                                        <ImageView fitHeight="30.0" fitWidth="68.0"
-                                                   pickOnBounds="true" preserveRatio="true">
-                                            <Image url="@../assets/IconPass.png"/>
+                                        <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../assets/IconPass.png" />
                                         </ImageView>
-                                        <PasswordField fx:id="passcheckfield"
-                                                       prefHeight="29.0" prefWidth="181.0"
-                                                       promptText="Confirm Password"
-                                                       style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-background-radius: 2; -fx-border-radius: 2; -fx-text-fill: White;">
+                                        <PasswordField fx:id="passcheckfield" prefHeight="29.0" prefWidth="181.0" promptText="Confirm Password" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-background-radius: 2; -fx-border-radius: 2; -fx-text-fill: White;">
                                             <font>
-                                                <Font name="Arial Rounded MT Bold"
-                                                      size="13.0"/>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
                                             </font>
                                         </PasswordField>
                                     </HBox>
                                 </VBox>
                             </AnchorPane>
                         </ScrollPane>
-                        <Button fx:id="Login" alignment="CENTER" contentDisplay="CENTER"
-                                mnemonicParsing="false"
-                                style="-fx-background-color: #FE1313; -fx-border-color: #E40000; -fx-border-radius: 6; -fx-background-radius: 6; -fx-effect: innershadow(gaussian, black, 10, 0.001, 0, -3);"
-                                text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="Login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #FE1313; -fx-border-color: #E40000; -fx-border-radius: 6; -fx-background-radius: 6; -fx-effect: innershadow(gaussian, black, 10, 0.001, 0, -3);" stylesheets="@CSS/signinout.css" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="75.0" top="10.0"/>
+                                <Insets bottom="10.0" left="75.0" top="10.0" />
                             </VBox.margin>
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="20.0"/>
+                                <Font name="Arial Rounded MT Bold" size="20.0" />
                             </font>
                         </Button>
                     </VBox>

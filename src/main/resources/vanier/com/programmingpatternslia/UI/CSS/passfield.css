@@ -1,0 +1,9 @@
+.password-field {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+
+.password-field:filled,
+.password-field:filled:focused {
+    -fx-font-size: 10px;
+}
