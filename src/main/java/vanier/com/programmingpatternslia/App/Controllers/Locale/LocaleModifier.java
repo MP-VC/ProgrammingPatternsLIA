@@ -5,7 +5,7 @@ public interface LocaleModifier {
     default void switchLanguage(String language) {
         if (language == null) return;
         if (language.equals("English")) GlobalLocale.setCurrentLocale(Locale.CANADA);
-        else if (language.equals("French")) GlobalLocale.setCurrentLocale(Locale.CANADA_FRENCH);
+        else if (language.equals("Francais") || language.equals("French")) GlobalLocale.setCurrentLocale(Locale.CANADA_FRENCH);
         updateLanguage();
     }
 }

@@ -11,9 +11,10 @@ public class SignUpApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SignUpApplication.class.getResource("/vanier/com/programmingpatternslia/UI/SignUp.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("SignUp");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }
