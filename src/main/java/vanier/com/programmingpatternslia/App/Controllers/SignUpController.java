@@ -1,16 +1,34 @@
 package vanier.com.programmingpatternslia.App.Controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import vanier.com.programmingpatternslia.App.Controllers.Locale.GlobalLocale;
+import vanier.com.programmingpatternslia.App.Controllers.Locale.LocaleModifier;
+import java.util.ResourceBundle;
 
-public class SignUpController {
+public class SignUpController implements LocaleModifier {
+
+    @FXML
     public Button Login;
+    @FXML
+    public Button switchLanguageButton;
+    @FXML
     public PasswordField passcheckfield;
+    @FXML
     public TextField agefield;
+    @FXML
     public TextField mailfield;
+    @FXML
     public TextField userfield;
 
+    @FXML
+    public void initialize() { updateLanguage(); }
+    
+    public void updateLanguage() {
+        ResourceBundle bundle = ResourceBundle.getBundle("file", GlobalLocale.getCurrentLocale());
+        userfield.setPromptText(bundle.getString("textbox.fullname"));
+        mailfield.setPromptText(bundle.getString("textbox.email"));
+        agefield.setPromptText(bundle.getString("textbox.age"));
+        passcheckfield.setPromptText(bundle.getString("textbox.password"));
+    }
 }
