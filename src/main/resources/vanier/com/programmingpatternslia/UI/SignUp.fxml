@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -23,6 +24,7 @@
     <BorderPane prefHeight="366.0" prefWidth="650.0">
         <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ComboBox fx:id="languagecombo" layoutX="548.0" layoutY="14.0" prefHeight="25.0" prefWidth="88.0" promptText="LANG" stylesheets="@CSS/languagecombo.css" visibleRowCount="3" />
                 <HBox layoutX="175.0" layoutY="67.0" prefHeight="260.0" prefWidth="300.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 25; -fx-border-width: 5; -fx-border-radius: 25; -fx-effect: innershadow(gaussian, #C20000, 30, 0.02, 0, -10);">
                     <VBox prefHeight="268.0" prefWidth="290.0">
                         <ImageView fitHeight="83.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">

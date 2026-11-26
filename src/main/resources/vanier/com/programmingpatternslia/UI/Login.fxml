@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -69,6 +70,7 @@
                         </Button>
                     </VBox>
                 </HBox>
+            <ComboBox fx:id="languagecombo" layoutX="546.0" layoutY="14.0" prefHeight="25.0" prefWidth="88.0" promptText="LANG" stylesheets="@CSS/languagecombo.css" visibleRowCount="3" />
             </AnchorPane>
         </center>
     </BorderPane>
