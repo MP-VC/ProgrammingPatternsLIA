@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.SignUpController">
+<AnchorPane prefHeight="297.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.SignUpController">
     <ImageView fitHeight="400.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../assets/Background.gif" />
     </ImageView>
@@ -85,7 +77,7 @@
                                         <ImageView fitHeight="30.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                                             <Image url="@../assets/IconPass.png" />
                                         </ImageView>
-                                        <PasswordField prefHeight="29.0" prefWidth="181.0" promptText="Password" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-background-radius: 2; -fx-border-radius: 2; -fx-text-fill: White;">
+                                        <PasswordField fx:id="passwordfield" prefHeight="29.0" prefWidth="181.0" promptText="Password" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-background-radius: 2; -fx-border-radius: 2; -fx-text-fill: White;">
                                             <font>
                                                 <Font name="Arial Rounded MT Bold" size="13.0" />
                                             </font>
