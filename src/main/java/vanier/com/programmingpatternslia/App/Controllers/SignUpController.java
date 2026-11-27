@@ -8,10 +8,7 @@ import javafx.scene.image.ImageView;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.GlobalLocale;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.LocaleModifier;
 
-import java.util.LinkedHashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SignUpController implements LocaleModifier {
 
@@ -32,26 +29,19 @@ public class SignUpController implements LocaleModifier {
     @FXML
     public ImageView backImage;
 
-    private final Map<String, Locale> languages = new LinkedHashMap<>();
-
     @FXML
     public void initialize() {
-        languages.put("English", Locale.ENGLISH);
-        languages.put("Francais", Locale.FRENCH);
-
         backImage.setImage(new Image(
-                getClass().getResource(
+                Objects.requireNonNull(getClass().getResource(
                         "/vanier/com/programmingpatternslia/assets/Background.gif"
-                ).toExternalForm(),
+                )).toExternalForm(),
                 650, 366, true, true
         ));
 
-        languagecombo.setItems(
-                FXCollections.observableArrayList(languages.keySet())
-        );
+        languagecombo.setItems(FXCollections.observableArrayList(GlobalLocale.getLanguages().keySet()));
 
-        for (String language : languages.keySet()) {
-            if (languages.get(language).getLanguage().equals(
+        for (String language : GlobalLocale.getLanguages().keySet()) {
+            if (GlobalLocale.getLanguages().get(language).getLanguage().equals(
                     GlobalLocale.getCurrentLocale().getLanguage())) {
                 languagecombo.setValue(language);
                 break;
@@ -59,9 +49,7 @@ public class SignUpController implements LocaleModifier {
         }
 
         languagecombo.setOnAction(event -> {
-            if (languagecombo.getValue() != null) {
-                switchLanguage(languagecombo.getValue());
-            }
+            if (languagecombo.getValue() != null) {switchLanguage(languagecombo.getValue());}
         });
 
         updateLanguage();
@@ -90,13 +78,12 @@ public class SignUpController implements LocaleModifier {
             passcheckfield.setPromptText(bundle.getString("textbox.passwordcheck"));
 
         if (Login != null)
-            Login.setText(bundle.getString("button.login"));
+            Login.setText(bundle.getString("button.signup"));
     }
 
     @FXML
     public void loginButtonOnClick() {
-        if (passcheckfield == null || agefield == null)
-            return;
+        if (passcheckfield == null || agefield == null) return;
 
         String passcheck = passcheckfield.getText();
         String age = agefield.getText();

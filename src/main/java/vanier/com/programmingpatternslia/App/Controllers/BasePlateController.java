@@ -34,5 +34,4 @@ public class BasePlateController implements LocaleModifier {
         profile.setText(bundle.getString("button.profile"));
         admin.setText(bundle.getString("button.admin"));
     }
-
 }
