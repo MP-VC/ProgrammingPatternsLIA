@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="vanier.com.programmingpatternslia.App.Controllers.AdminPanelController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane minHeight="589.0" minWidth="906.0" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.AdminPanelController">
+    <children>
+        <BorderPane styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <left>
+                <fx:include fx:id="sidebar" source="Sidebar.fxml" />
+            </left>
+            <center>
+                <VBox alignment="TOP_LEFT" spacing="18.0">
+                    <padding><Insets bottom="22.0" left="26.0" right="26.0" top="30.0" /></padding>
+                    <children>
+                        <Label fx:id="welcomeText" text="Administrator Control Panel" textFill="WHITE"><font><Font name="Arial Rounded MT Bold" size="24.0" /></font></Label>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <Button maxWidth="Infinity" minHeight="125.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" stylesheets="@CSS/stylizedbutton.css" text="Create Conferences" HBox.hgrow="ALWAYS" />
+                            <Button maxWidth="Infinity" minHeight="125.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" stylesheets="@CSS/stylizedbutton.css" text="Manage Conferences" HBox.hgrow="ALWAYS" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <Button maxWidth="Infinity" minHeight="125.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" stylesheets="@CSS/stylizedbutton.css" text="View Reports" HBox.hgrow="ALWAYS" />
+                        </HBox>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

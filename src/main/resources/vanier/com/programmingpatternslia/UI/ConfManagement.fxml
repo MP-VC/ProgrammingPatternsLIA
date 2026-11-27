@@ -1,78 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ConferenceListAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfManagementController">
-   <children>
-      <TableView fx:id="conferencesTableView" layoutX="181.0" layoutY="157.0" prefHeight="420.0" prefWidth="621.0">
-         <columns>
-            <TableColumn fx:id="titleCol" prefWidth="150.0" text="Title" />
-            <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="87.0" text="Date" />
-            <TableColumn fx:id="startTimeCol" minWidth="0.0" prefWidth="51.5" text="Start" />
-            <TableColumn fx:id="endTimeCol" minWidth="0.0" prefWidth="50.5" text="End" />
-            <TableColumn fx:id="capacityCol" minWidth="2.5" prefWidth="57.5" text="Capacity" />
-            <TableColumn fx:id="availableSeatsCol" prefWidth="116.0" text="Available Seats" />
-            <TableColumn fx:id="locationCol" minWidth="0.0" prefWidth="107.5" text="Location" />
-         </columns>
-      </TableView>
-      <Line endX="62.5" endY="375.0" layoutX="109.0" layoutY="213.0" startX="62.5" startY="-153.5" />
-      <TextField fx:id="searchConfTextField" layoutX="196.0" layoutY="104.0" onAction="#searchConferences" prefHeight="27.0" prefWidth="523.0" promptText="Search Conference" />
-      <Label layoutX="196.0" layoutY="58.0" text="Conference List">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="homeLabel" layoutX="56.0" layoutY="89.0" prefHeight="37.0" prefWidth="53.0" text="Home">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="confLabel" layoutX="29.0" layoutY="145.0" prefHeight="37.0" prefWidth="107.0" text="Conferences">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="myRegistrationsLabel" layoutX="11.0" layoutY="193.0" prefHeight="66.0" prefWidth="144.0" text="My Registrations">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="waitingListLabel" layoutX="29.0" layoutY="276.0" prefHeight="37.0" prefWidth="107.0" text="Waiting List">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="profileLabel" layoutX="52.0" layoutY="348.0" prefHeight="37.0" prefWidth="61.0" text="Profile">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="confyRenceLabel" layoutX="20.0" layoutY="14.0" text="ConfyRence">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button fx:id="viewConfButton" layoutX="820.0" layoutY="170.0" mnemonicParsing="false" onAction="#viewConferenceDetails" prefHeight="48.0" prefWidth="70.0" text="View">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="editConfButton" layoutX="820.0" layoutY="247.0" mnemonicParsing="false" onAction="#editConference" prefHeight="48.0" prefWidth="70.0" text="Edit">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="deleteConfButton" layoutX="820.0" layoutY="324.0" mnemonicParsing="false" onAction="#deleteConference" prefHeight="48.0" prefWidth="70.0" text="Delete">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane fx:id="ConferenceListAnchorPane" minHeight="589.0" minWidth="906.0" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfManagementController">
+    <children>
+        <BorderPane styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <left>
+                <fx:include fx:id="sidebar" source="Sidebar.fxml" />
+            </left>
+            <center>
+                <VBox alignment="TOP_LEFT" spacing="18.0">
+                    <padding><Insets bottom="22.0" left="26.0" right="26.0" top="30.0" /></padding>
+                    <children>
+                        <Label text="Conference Management" textFill="WHITE"><font><Font name="Arial Rounded MT Bold" size="24.0" /></font></Label>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <TextField fx:id="searchConfTextField" maxWidth="Infinity" onAction="#searchConferences" prefHeight="30.0" promptText="Search Conference" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                        </HBox>
+                        <TableView fx:id="conferencesTableView" stylesheets="@CSS/table.css" VBox.vgrow="ALWAYS">
+                            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS" /></columnResizePolicy>
+                            <columns>
+                                <TableColumn fx:id="titleCol" prefWidth="150.0" text="Title" />
+                                <TableColumn fx:id="dateCol" prefWidth="87.0" text="Date" />
+                                <TableColumn fx:id="startTimeCol" prefWidth="51.5" text="Start" />
+                                <TableColumn fx:id="endTimeCol" prefWidth="50.5" text="End" />
+                                <TableColumn fx:id="capacityCol" prefWidth="57.5" text="Capacity" />
+                                <TableColumn fx:id="availableSeatsCol" prefWidth="116.0" text="Available Seats" />
+                                <TableColumn fx:id="locationCol" prefWidth="107.5" text="Location" />
+                            </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <Button fx:id="viewConfButton" mnemonicParsing="false" onAction="#viewConferenceDetails" prefHeight="32.0" stylesheets="@CSS/stylizedbutton.css" text="View" />
+                            <Button fx:id="editConfButton" mnemonicParsing="false" onAction="#editConference" prefHeight="32.0" stylesheets="@CSS/stylizedbutton.css" text="Edit" />
+                            <Button fx:id="deleteConfButton" mnemonicParsing="false" onAction="#deleteConference" prefHeight="32.0" stylesheets="@CSS/stylizedbutton.css" text="Delete" />
+                        </HBox>
+                        <Label fx:id="homeLabel" managed="false" text="Home" visible="false" />
+                        <Label fx:id="confLabel" managed="false" text="Conferences" visible="false" />
+                        <Label fx:id="myRegistrationsLabel" managed="false" text="My Registrations" visible="false" />
+                        <Label fx:id="waitingListLabel" managed="false" text="Waiting List" visible="false" />
+                        <Label fx:id="profileLabel" managed="false" text="Profile" visible="false" />
+                        <Label fx:id="confyRenceLabel" managed="false" text="ConfyRence" visible="false" />
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
 </AnchorPane>

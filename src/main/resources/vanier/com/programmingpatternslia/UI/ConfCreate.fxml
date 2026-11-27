@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfCreateController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane minHeight="589.0" minWidth="906.0" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfCreateController">
+    <children>
+        <BorderPane styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <left>
+                <fx:include fx:id="sidebar" source="Sidebar.fxml" />
+            </left>
+            <center>
+                <VBox alignment="TOP_LEFT" spacing="18.0">
+                    <padding><Insets bottom="22.0" left="26.0" right="26.0" top="30.0" /></padding>
+                    <children>
+                        <Label fx:id="welcomeText" text="Create Conference" textFill="WHITE"><font><Font name="Arial Rounded MT Bold" size="24.0" /></font></Label>
+                        <GridPane hgap="15.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-border-radius: 25; -fx-background-radius: 25; -fx-border-width: 5; -fx-effect: innershadow(gaussian, #C20000, 30, 0.02, 0, -5);" vgap="15.0">
+                            <padding><Insets bottom="25.0" left="25.0" right="25.0" top="25.0" /></padding>
+                            <columnConstraints><ColumnConstraints minWidth="110.0" /><ColumnConstraints hgrow="ALWAYS" /></columnConstraints>
+                            <Label text="Title" textFill="WHITE" GridPane.rowIndex="0" />
+                            <TextField maxWidth="Infinity" prefHeight="30.0" promptText="Title" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <Label text="Start" textFill="WHITE" GridPane.rowIndex="1" />
+                            <TextField maxWidth="Infinity" prefHeight="30.0" promptText="Start" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="End" textFill="WHITE" GridPane.rowIndex="2" />
+                            <TextField maxWidth="Infinity" prefHeight="30.0" promptText="End" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Label text="Capacity" textFill="WHITE" GridPane.rowIndex="3" />
+                            <TextField maxWidth="Infinity" prefHeight="30.0" promptText="Capacity" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label text="Description" textFill="WHITE" GridPane.rowIndex="4" />
+                            <TextArea prefRowCount="5" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white; -fx-control-inner-background: #0F0C0C;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                            <Button mnemonicParsing="false" prefHeight="32.0" stylesheets="@CSS/stylizedbutton.css" text="Cancel" />
+                            <Button mnemonicParsing="false" prefHeight="32.0" stylesheets="@CSS/stylizedbutton.css" text="Create" />
+                        </HBox>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
