@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="vanier.com.programmingpatternslia.App.Controllers.ProfileController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
-
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ProfileController">
+  <VBox prefHeight="300.0" prefWidth="116.0">
+    <Label alignment="CENTER" prefHeight="52.0" prefWidth="111.0" text="ConfyRence" textAlignment="CENTER" />
+    <Button fx:id="home" mnemonicParsing="false" onAction="#homeOnClick" prefHeight="25.0" prefWidth="115.0" />
+    <Button fx:id="conferences" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#conferencesOnClick" prefHeight="25.0" prefWidth="115.0" />
+    <Button fx:id="myregistrations" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#myregistrationsOnClick" prefHeight="25.0" prefWidth="115.0" />
+    <Button fx:id="waitinglist" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#waitinglistOnClick" prefHeight="25.0" prefWidth="115.0" />
+    <Button fx:id="profile" layoutX="10.0" layoutY="137.0" mnemonicParsing="false" onAction="#profileOnClick" prefHeight="25.0" prefWidth="115.0" />
+    <Button fx:id="admin" layoutX="10.0" layoutY="162.0" mnemonicParsing="false" onAction="#adminOnClick" prefHeight="25.0" prefWidth="115.0" />
+  </VBox>
+  <VBox layoutX="135.0" prefHeight="300.0" prefWidth="265.0">
+    <Label fx:id="myProfileLBL"/>
+    <Label fx:id="fnameLBL"/>
+    <TextField fx:id="fnameTXTBox"/>
+    <Label fx:id="emailLBL"/>
+    <TextField fx:id="emailTXTBox"/>
+    <Label fx:id="ageLBL" prefHeight="25.0" prefWidth="222.0"/>
+    <TextField fx:id="ageTXTBox"/>
+    <Label fx:id="passLBL"/>
+    <PasswordField fx:id="passField"/>
+    <Button fx:id="updateBTN" mnemonicParsing="false"/>
+    <Button fx:id="backBTN" mnemonicParsing="false"/>
+  </VBox>
+</AnchorPane>

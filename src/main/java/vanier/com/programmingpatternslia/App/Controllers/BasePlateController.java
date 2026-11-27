@@ -23,6 +23,18 @@ public class BasePlateController implements LocaleModifier {
     public void initialize() {
         updateLanguage();
     }
+    @FXML
+    public void homeOnClick() {}
+    @FXML
+    public void conferencesOnClick() {}
+    @FXML
+    public void myregistrationsOnClick() {}
+    @FXML
+    public void waitinglistOnClick() {}
+    @FXML
+    public void profileOnClick() {}
+    @FXML
+    public void adminOnClick() {}
 
     @Override
     public void updateLanguage() {
