@@ -1,0 +1,8 @@
+.animated-background {
+    -fx-background-color: #0F0C0C;
+    -fx-background-image: url("../../assets/Background.gif");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-insets: 0;
+}
