@@ -1,16 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfDetailController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane fx:id="ConferenceDetailAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfDetailController">
+   <children>
+      <Label fx:id="confyRenceLabel" layoutX="20.0" layoutY="14.0" text="ConfyRence">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="confImageView" fitHeight="277.0" fitWidth="314.0" layoutX="68.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/assets/ConfDetailIcon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="arrowLabel" layoutX="46.0" layoutY="49.0" prefHeight="81.0" prefWidth="75.0" text="←">
+         <font>
+            <Font size="72.0" />
+         </font>
+      </Label>
+      <Line endX="797.0" layoutX="109.0" layoutY="57.0" startX="-117.5" />
+      <Label fx:id="confTitleLabel" layoutX="513.0" layoutY="154.0" prefHeight="35.0" prefWidth="157.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="411.0" layoutY="208.0" prefHeight="35.0" prefWidth="52.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel1" layoutX="411.0" layoutY="246.0" prefHeight="35.0" prefWidth="52.0" text="Start:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel2" layoutX="411.0" layoutY="281.0" prefHeight="35.0" prefWidth="52.0" text="End:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel3" layoutX="411.0" layoutY="316.0" prefHeight="35.0" prefWidth="87.0" text="Capacity:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel31" layoutX="411.0" layoutY="351.0" prefHeight="35.0" prefWidth="141.0" text="Registered:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="registerButton" layoutX="732.0" layoutY="206.0" mnemonicParsing="false" onAction="#registerForConference" prefHeight="53.0" prefWidth="97.0" text="Register">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="confDateLabel" layoutX="472.0" layoutY="208.0" prefHeight="35.0" prefWidth="119.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confStartTimeLabel" layoutX="472.0" layoutY="246.0" prefHeight="35.0" prefWidth="119.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confEndTimeLabel" layoutX="472.0" layoutY="281.0" prefHeight="35.0" prefWidth="119.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confCapacityLabel" layoutX="505.0" layoutY="316.0" prefHeight="35.0" prefWidth="119.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confRegisteredLabel" layoutX="516.0" layoutY="351.0" prefHeight="35.0" prefWidth="119.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="732.0" layoutY="307.0" mnemonicParsing="false" onAction="#backToConferences" prefHeight="53.0" prefWidth="97.0" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

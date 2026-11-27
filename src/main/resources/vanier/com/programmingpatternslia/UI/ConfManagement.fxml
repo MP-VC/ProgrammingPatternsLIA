@@ -1,16 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfManagementController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane fx:id="ConferenceListAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfManagementController">
+   <children>
+      <TableView fx:id="conferencesTableView" layoutX="181.0" layoutY="157.0" prefHeight="420.0" prefWidth="621.0">
+         <columns>
+            <TableColumn fx:id="titleCol" prefWidth="150.0" text="Title" />
+            <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="87.0" text="Date" />
+            <TableColumn fx:id="startTimeCol" minWidth="0.0" prefWidth="51.5" text="Start" />
+            <TableColumn fx:id="endTimeCol" minWidth="0.0" prefWidth="50.5" text="End" />
+            <TableColumn fx:id="capacityCol" minWidth="2.5" prefWidth="57.5" text="Capacity" />
+            <TableColumn fx:id="availableSeatsCol" prefWidth="116.0" text="Available Seats" />
+            <TableColumn fx:id="locationCol" minWidth="0.0" prefWidth="107.5" text="Location" />
+         </columns>
+      </TableView>
+      <Line endX="62.5" endY="375.0" layoutX="109.0" layoutY="213.0" startX="62.5" startY="-153.5" />
+      <TextField fx:id="searchConfTextField" layoutX="196.0" layoutY="104.0" onAction="#searchConferences" prefHeight="27.0" prefWidth="523.0" promptText="Search Conference" />
+      <Label layoutX="196.0" layoutY="58.0" text="Conference List">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="homeLabel" layoutX="56.0" layoutY="89.0" prefHeight="37.0" prefWidth="53.0" text="Home">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confLabel" layoutX="29.0" layoutY="145.0" prefHeight="37.0" prefWidth="107.0" text="Conferences">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="myRegistrationsLabel" layoutX="11.0" layoutY="193.0" prefHeight="66.0" prefWidth="144.0" text="My Registrations">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="waitingListLabel" layoutX="29.0" layoutY="276.0" prefHeight="37.0" prefWidth="107.0" text="Waiting List">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="profileLabel" layoutX="52.0" layoutY="348.0" prefHeight="37.0" prefWidth="61.0" text="Profile">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confyRenceLabel" layoutX="20.0" layoutY="14.0" text="ConfyRence">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="viewConfButton" layoutX="820.0" layoutY="170.0" mnemonicParsing="false" onAction="#viewConferenceDetails" prefHeight="48.0" prefWidth="70.0" text="View">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="editConfButton" layoutX="820.0" layoutY="247.0" mnemonicParsing="false" onAction="#editConference" prefHeight="48.0" prefWidth="70.0" text="Edit">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteConfButton" layoutX="820.0" layoutY="324.0" mnemonicParsing="false" onAction="#deleteConference" prefHeight="48.0" prefWidth="70.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
