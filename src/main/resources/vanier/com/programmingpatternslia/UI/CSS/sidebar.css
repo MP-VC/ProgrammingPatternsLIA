@@ -1,0 +1,129 @@
+.sidebar {
+    -fx-background-color: linear-gradient(
+            to bottom right, #202020, #111111
+    );
+    -fx-border-color: transparent #750000 transparent transparent;
+    -fx-border-width: 0 2px 0 0;
+    -fx-padding: 10px;
+    -fx-spacing: 7px;
+}
+
+.sidebar-header,
+.sidebar-logo-container {
+    -fx-alignment: center;
+    -fx-padding: 12px 5px 15px 5px;
+    -fx-background-color: linear-gradient(
+            to bottom, #292929, transparent
+    );
+    -fx-background-radius: 6px;
+    -fx-border-color: transparent transparent #650000 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.sidebar-logo {
+    -fx-opacity: 0.95;
+    -fx-effect: dropshadow(
+            gaussian, #75000055, 10, 0.15, 0, 0
+    );
+}
+
+.sidebar-logo:hover {
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(
+            gaussian, #B0000066, 14, 0.2, 0, 0
+    );
+}
+
+.sidebar .button,
+.sidebar .toggle-button {
+    -fx-background-color: linear-gradient(
+            to bottom, #303030, #262626
+    );
+    -fx-background-radius: 5px;
+    -fx-background-insets: 0;
+    -fx-border-color: #750000;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #CCCCCC;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px 12px;
+    -fx-cursor: hand;
+    -fx-max-width: infinity;
+}
+
+.sidebar .button:hover,
+.sidebar .toggle-button:hover {
+    -fx-background-color: linear-gradient(
+            to bottom, #404040, #303030
+    );
+    -fx-border-color: #D00020;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(
+            gaussian, #90000044, 8, 0.2, 0, 0
+    );
+}
+
+.sidebar .button:pressed,
+.sidebar .toggle-button:pressed {
+    -fx-background-color: #451015;
+    -fx-border-color: #FF3444;
+    -fx-text-fill: white;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+.sidebar .button.active,
+.sidebar .toggle-button:selected {
+    -fx-background-color: linear-gradient(
+            to right, #550D15, #301B1B
+    );
+    -fx-border-color: #FF3444;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(
+            gaussian, #B0000033, 8, 0.2, 0, 0
+    );
+}
+
+.sidebar .button.active:hover,
+.sidebar .toggle-button:selected:hover {
+    -fx-background-color: linear-gradient(
+            to right, #70101A, #402222
+    );
+    -fx-border-color: #FF5566;
+}
+
+.sidebar .button.active:pressed,
+.sidebar .toggle-button:selected:pressed {
+    -fx-background-color: #400810;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+.sidebar .section-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 5px 5px 5px;
+}
+
+.sidebar .separator .line {
+    -fx-border-color: #383838;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.sidebar .button.logout {
+    -fx-background-color: #321717;
+    -fx-border-color: #850000;
+    -fx-text-fill: #FF7777;
+}
+
+.sidebar .button.logout:hover {
+    -fx-background-color: #650000;
+    -fx-border-color: #FF3444;
+    -fx-text-fill: white;
+}
+
+.sidebar .button.logout:pressed {
+    -fx-background-color: #990000;
+}
