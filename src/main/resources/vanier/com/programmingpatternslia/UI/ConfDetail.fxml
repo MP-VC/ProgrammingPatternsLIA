@@ -14,71 +14,78 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ConferenceDetailAnchorPane" minHeight="589.0" minWidth="906.0" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfDetailController">
-    <children>
-        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <left>
-                <fx:include fx:id="sidebar" source="Sidebar.fxml" />
-            </left>
-            <center>
-                <AnchorPane styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css">
-                <children>
-                <VBox alignment="TOP_LEFT" spacing="14.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-border-radius: 25; -fx-background-radius: 25; -fx-border-width: 3; -fx-effect: innershadow(gaussian, #C20000, 25, 0.02, 0, -5);" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="30.0">
-                    <padding><Insets bottom="22.0" left="26.0" right="26.0" top="30.0" /></padding>
-                    <children>
-                        <Label text="Conference Details" textFill="WHITE"><font><Font name="Arial Rounded MT Bold" size="24.0" /></font></Label>
-                        <fx:define>
-                            <Label fx:id="confyRenceLabel" text="ConfyRence" />
-                            <Label fx:id="arrowLabel" text="←" />
-                            <ImageView fx:id="confImageView" />
-                            <Label fx:id="confTitleLabel" text="" />
-                            <Label fx:id="confDateLabel" text="" />
-                            <Label fx:id="confStartTimeLabel" text="" />
-                            <Label fx:id="confEndTimeLabel" text="" />
-                            <Label fx:id="confCapacityLabel" text="" />
-                            <Label fx:id="confRegisteredLabel" text="" />
-                        </fx:define>
-                        <GridPane hgap="15.0" maxWidth="Infinity" vgap="10.0">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="NEVER" minWidth="110.0" />
-                                <ColumnConstraints fillWidth="true" hgrow="ALWAYS" minWidth="150.0" />
-                            </columnConstraints>
-                            <children>
-                                <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Title" textFill="#ebebeb" GridPane.rowIndex="0" />
-                                <TextField fx:id="titlefield" editable="false" maxWidth="Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confTitleLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                                <Label fx:id="dateLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Date:" textFill="#ebebeb" GridPane.rowIndex="1" />
-                                <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confDateLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label fx:id="dateLabel1" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Start:" textFill="#ebebeb" GridPane.rowIndex="2" />
-                                <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confStartTimeLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                <Label fx:id="dateLabel2" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="End:" textFill="#ebebeb" GridPane.rowIndex="3" />
-                                <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confEndTimeLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                <Label fx:id="dateLabel3" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Capacity:" textFill="#ebebeb" GridPane.rowIndex="4" />
-                                <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confCapacityLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                <Label fx:id="dateLabel31" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Registered:" textFill="#ebebeb" GridPane.rowIndex="5" />
-                                <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confRegisteredLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                            </children>
-                           <rowConstraints>
-                              <RowConstraints />
-                              <RowConstraints />
-                              <RowConstraints />
-                              <RowConstraints />
-                              <RowConstraints />
-                              <RowConstraints />
-                           </rowConstraints>
-                        </GridPane>
-                        <VBox spacing="8.0" VBox.vgrow="ALWAYS">
-                            <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Description" textFill="#ebebeb" />
-                            <TextArea fx:id="descriptionArea" editable="false" minHeight="65.0" prefHeight="90.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white; -fx-control-inner-background: #0F0C0C;" wrapText="true" VBox.vgrow="ALWAYS" />
-                        </VBox>
-                        <HBox alignment="CENTER_RIGHT" spacing="12.0">
-                            <Button fx:id="registerButton" minWidth="100.0" mnemonicParsing="false" onAction="#registerForConference" prefHeight="36.0" stylesheets="@CSS/stylizedbutton.css" text="Register" />
-                            <Button fx:id="backButton" minWidth="100.0" mnemonicParsing="false" onAction="#backToConferences" prefHeight="36.0" stylesheets="@CSS/stylizedbutton.css" text="Back" />
-                        </HBox>
-                    </children>
+<?import javafx.scene.image.ImageView?>
+<AnchorPane fx:id="ConferenceDetailAnchorPane" minHeight="589.0" minWidth="906.0" prefHeight="589.0" prefWidth="906.0"
+            xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfDetailController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
+        <left>
+            <fx:include fx:id="sidebar" source="Sidebar.fxml"/>
+        </left>
+        <center>
+            <AnchorPane styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css">
+                <VBox spacing="14.0"
+                      style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-border-radius: 25; -fx-background-radius: 25; -fx-border-width: 3; -fx-effect: innershadow(gaussian, #C20000, 25, 0.02, 0, -5);"
+                      AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0"
+                      AnchorPane.topAnchor="30.0">
+                    <padding>
+                        <Insets bottom="22.0" left="26.0" right="26.0" top="30.0"/>
+                    </padding>
+                    <Label text="Conference Details" textFill="WHITE">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="24.0"/>
+                        </font>
+                    </Label>
+                    <fx:define>
+                        <Label fx:id="confyRenceLabel" text="ConfyRence"/>
+                        <Label fx:id="arrowLabel" text="←"/>
+                        <ImageView fx:id="confImageView"/>
+                        <Label fx:id="confTitleLabel"/>
+                        <Label fx:id="confDateLabel"/>
+                        <Label fx:id="confStartTimeLabel"/>
+                        <Label fx:id="confEndTimeLabel"/>
+                        <Label fx:id="confCapacityLabel"/>
+                        <Label fx:id="confRegisteredLabel"/>
+                    </fx:define>
+                    <GridPane hgap="15.0" maxWidth="Infinity" vgap="10.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" minWidth="110.0"/>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="150.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints/>
+                            <RowConstraints/>
+                            <RowConstraints/>
+                            <RowConstraints/>
+                            <RowConstraints/>
+                            <RowConstraints/>
+                        </rowConstraints>
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Title"
+                               textFill="#ebebeb" GridPane.rowIndex="0"/>
+                        <TextField fx:id="titlefield" editable="false" maxWidth="Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confTitleLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label fx:id="dateLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Date:" textFill="#ebebeb" GridPane.rowIndex="1"/>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confDateLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label fx:id="dateLabel1" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Start:" textFill="#ebebeb" GridPane.rowIndex="2"/>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confStartTimeLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Label fx:id="dateLabel2" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="End:" textFill="#ebebeb" GridPane.rowIndex="3"/>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confEndTimeLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <Label fx:id="dateLabel3" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Capacity:" textFill="#ebebeb" GridPane.rowIndex="4"/>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confCapacityLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                        <Label fx:id="dateLabel31" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Registered:" textFill="#ebebeb" GridPane.rowIndex="5"/>
+                        <TextField editable="false" maxWidth="-Infinity" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white;" text="${confRegisteredLabel.text}" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                    </GridPane>
+                    <VBox spacing="8.0" VBox.vgrow="ALWAYS">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Description"
+                               textFill="#ebebeb"/>
+                        <TextArea fx:id="descriptionArea" editable="false" minHeight="65.0" prefHeight="90.0" style="-fx-background-color: #0F0C0C; -fx-border-color: #C20000; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: white; -fx-control-inner-background: #0F0C0C;" wrapText="true" VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                    <HBox alignment="CENTER_RIGHT" spacing="12.0">
+                        <Button fx:id="registerButton" minWidth="100.0" mnemonicParsing="false" onAction="#registerForConference" prefHeight="36.0" stylesheets="@CSS/stylizedbutton.css" text="Register"/>
+                        <Button fx:id="backButton" minWidth="100.0" mnemonicParsing="false" onAction="#backToConferences" prefHeight="36.0" stylesheets="@CSS/stylizedbutton.css" text="Back"/>
+                    </HBox>
                 </VBox>
-                </children>
-                </AnchorPane>
-            </center>
-        </BorderPane>
-    </children>
+            </AnchorPane>
+        </center>
+    </BorderPane>
 </AnchorPane>

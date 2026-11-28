@@ -2,14 +2,12 @@ package vanier.com.programmingpatternslia.App.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-
-import javax.swing.*;
+import javafx.scene.control.*;
 
 public class ConfManagementController {
+    @FXML
+    public Button viewConfButton,editConfButton,deleteConfButton;
+
     @FXML
     private TableView conferencesTableView;
 
@@ -20,7 +18,7 @@ public class ConfManagementController {
     private TextField searchConfTextField;
 
     @FXML
-    private Label homeLabel, confLabel, myRegistrationsLabel, waitingListLabel, profileLabel;
+    private Label confyRenceLabel,homeLabel, confLabel, myRegistrationsLabel, waitingListLabel, profileLabel;
 
     @FXML
     public void searchConferences(ActionEvent event){

@@ -12,78 +12,38 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="ConferenceListAnchorPane" minHeight="589.0" minWidth="906.0" prefHeight="589.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vanier.com.programmingpatternslia.App.Controllers.ConfListController">
-
-    <children>
-
-        <BorderPane minHeight="196.0" minWidth="500.0" prefHeight="589.0" prefWidth="906.0" styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-
-            <left>
-
-                <fx:include fx:id="sidebar" source="Sidebar.fxml" />
-
-            </left>
-
-            <center>
-
-                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="196.0" minWidth="260.0" prefHeight="589.0" prefWidth="751.0">
-
-                    <children>
-
-                        <Label text="Conference List" textFill="WHITE" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="31.0">
-
-                            <font>
-                                <Font name="Arial Rounded MT Bold" size="24.0" />
-                            </font>
-
-                        </Label>
-
-                        <HBox alignment="CENTER_LEFT" spacing="12.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="72.0">
-
-                            <children>
-
-                                <TextField fx:id="searchConfTextField" maxWidth="1.7976931348623157E308" minWidth="150.0" onAction="#searchConferences" prefHeight="27.0" promptText="Search Conference" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-width: 1; -fx-border-radius: 2; -fx-background-radius: 2;" HBox.hgrow="ALWAYS" />
-
-                                <Button fx:id="viewBut" maxHeight="27.0" maxWidth="120.0" minHeight="27.0" minWidth="120.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="120.0" stylesheets="@CSS/stylizedbutton.css" text="View" HBox.hgrow="NEVER" />
-
-                            </children>
-
-                        </HBox>
-
-                        <TableView fx:id="conferencesTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="440.0" prefHeight="447.0" prefWidth="633.0" stylesheets="@CSS/table.css" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="107.0">
-
-                            <columnResizePolicy>
-                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS" />
-                            </columnResizePolicy>
-
-                            <columns>
-
-                                <TableColumn fx:id="titleCol" minWidth="70.0" prefWidth="150.0" text="Title" />
-
-                                <TableColumn fx:id="dateCol" minWidth="60.0" prefWidth="87.0" text="Date" />
-
-                                <TableColumn fx:id="startTimeCol" minWidth="40.0" prefWidth="51.5" text="Start" />
-
-                                <TableColumn fx:id="endTimeCol" minWidth="40.0" prefWidth="50.5" text="End" />
-
-                                <TableColumn fx:id="capacityCol" minWidth="50.0" prefWidth="57.5" text="Capacity" />
-
-                                <TableColumn fx:id="availableSeatsCol" minWidth="80.0" prefWidth="116.0" text="Available Seats" />
-
-                                <TableColumn fx:id="locationCol" minWidth="60.0" prefWidth="120.0" text="Location" />
-
-                            </columns>
-
-                        </TableView>
-                  <ComboBox layoutX="587.0" layoutY="14.0" prefHeight="29.0" prefWidth="102.0" promptText="LANG" stylesheets="@CSS/languagecombo.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
-
-                    </children>
-
-                </AnchorPane>
-
-            </center>
-
-        </BorderPane>
-
-    </children>
-
+    <BorderPane minHeight="196.0" minWidth="500.0" prefHeight="589.0" prefWidth="906.0" styleClass="animated-background" stylesheets="@CSS/aniamtedbackground.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <left>
+            <fx:include fx:id="sidebar" source="Sidebar.fxml"/>
+        </left>
+        <center>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="196.0" minWidth="260.0" prefHeight="589.0" prefWidth="751.0">
+                <Label text="Conference List" textFill="WHITE" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="31.0">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0"/>
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="12.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0"
+                      AnchorPane.topAnchor="72.0">
+                    <TextField fx:id="searchConfTextField" maxWidth="1.7976931348623157E308" minWidth="150.0" onAction="#searchConferences" prefHeight="27.0" promptText="Search Conference" style="-fx-background-color: #0F0C0C; -fx-border-color: #E20000; -fx-border-width: 1; -fx-border-radius: 2; -fx-background-radius: 2;" HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="viewBut" maxHeight="27.0" maxWidth="120.0" minHeight="27.0" minWidth="120.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="120.0" stylesheets="@CSS/stylizedbutton.css" text="View" HBox.hgrow="NEVER"/>
+                </HBox>
+                <TableView fx:id="conferencesTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="440.0" prefHeight="447.0" prefWidth="633.0" stylesheets="@CSS/table.css" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="107.0">
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS"/>
+                    </columnResizePolicy>
+                    <columns>
+                        <TableColumn fx:id="titleCol" minWidth="70.0" prefWidth="150.0" text="Title"/>
+                        <TableColumn fx:id="dateCol" minWidth="60.0" prefWidth="87.0" text="Date"/>
+                        <TableColumn fx:id="startTimeCol" minWidth="40.0" prefWidth="51.5" text="Start"/>
+                        <TableColumn fx:id="endTimeCol" minWidth="40.0" prefWidth="50.5" text="End"/>
+                        <TableColumn fx:id="capacityCol" minWidth="50.0" prefWidth="57.5" text="Capacity"/>
+                        <TableColumn fx:id="availableSeatsCol" minWidth="80.0" prefWidth="116.0" text="Available Seats"/>
+                        <TableColumn fx:id="locationCol" minWidth="60.0" prefWidth="120.0" text="Location"/>
+                    </columns>
+                </TableView>
+                <ComboBox layoutX="587.0" layoutY="14.0" prefHeight="29.0" prefWidth="102.0" promptText="LANG" stylesheets="@CSS/languagecombo.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0"/>
+            </AnchorPane>
+        </center>
+    </BorderPane>
 </AnchorPane>

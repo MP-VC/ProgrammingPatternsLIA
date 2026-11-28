@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javax.swing.*;
 
 public class ConfListController {
+    public Button viewBut;
     @FXML
     private TableView conferencesTableView;
 

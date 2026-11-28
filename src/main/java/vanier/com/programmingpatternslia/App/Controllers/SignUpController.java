@@ -18,20 +18,14 @@ public class SignUpController implements LocaleModifier {
     @FXML
     public Button Login;
     @FXML
-    public PasswordField passfield;
+    public PasswordField passfield,passcheckfield;
     @FXML
-    public PasswordField passcheckfield;
-    @FXML
-    public TextField agefield;
-    @FXML
-    public TextField mailfield;
-    @FXML
-    public TextField userfield;
+    public TextField agefield,mailfield,userfield;
     @FXML
     public ComboBox<String> languagecombo;
     @FXML
     public ImageView backImage;
-    public UserDAO user = UserDAO.getInstance();
+    UserDAO user = UserDAO.getInstance();
     CredentialDAO credentials = CredentialDAO.getInstance();
 
     @FXML
