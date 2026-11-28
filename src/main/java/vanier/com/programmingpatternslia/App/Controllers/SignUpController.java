@@ -1,15 +1,22 @@
 package vanier.com.programmingpatternslia.App.Controllers;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import vanier.com.programmingpatternslia.App.Controllers.CurrentUser.CurrentUser;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.GlobalLocale;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.LocaleModifier;
 import vanier.com.programmingpatternslia.DataBase.Credential.CredentialDAO;
 import vanier.com.programmingpatternslia.DataBase.User.UserDAO;
+import vanier.com.programmingpatternslia.Model.User;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -81,7 +88,7 @@ public class SignUpController implements LocaleModifier {
     }
 
     @FXML
-    public void loginButtonOnClick() throws SQLException {
+    public void loginButtonOnClick(ActionEvent event) throws SQLException, IOException {
         String pass = passfield.getText();
         String passcheck = passcheckfield.getText();
         String age = agefield.getText();
@@ -118,6 +125,11 @@ public class SignUpController implements LocaleModifier {
             return;
         }
         int userId = user.createUser(fname, userAge, "PARTICIPANT");
+        CurrentUser.setCurrentUser(new User(userId,fname,userAge,"PARTICIPANT"));
+        CurrentUser.setEmail(mail);
         credentials.createPassword(userId, mail, pass);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vanier/com/programmingpatternslia/UI/UserHome.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(loader.load());
     }
 }

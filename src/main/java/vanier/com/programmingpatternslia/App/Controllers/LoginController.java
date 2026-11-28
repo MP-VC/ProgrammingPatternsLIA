@@ -1,15 +1,23 @@
 package vanier.com.programmingpatternslia.App.Controllers;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+import vanier.com.programmingpatternslia.App.Controllers.CurrentUser.CurrentUser;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.GlobalLocale;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.LocaleModifier;
 import vanier.com.programmingpatternslia.DataBase.Credential.CredentialDAO;
+import vanier.com.programmingpatternslia.DataBase.User.UserDAO;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class LoginController implements LocaleModifier {
     CredentialDAO credentials = CredentialDAO.getInstance();
+    UserDAO users = UserDAO.getInstance();
     @FXML
     public TextField userfield;
     @FXML
@@ -29,7 +37,7 @@ public class LoginController implements LocaleModifier {
         updateLanguage();
     }
     @FXML
-    public void loginButtonOnClick() throws SQLException {
+    public void loginButtonOnClick(ActionEvent event) throws SQLException, IOException {
         String email = userfield.getText();
         String password = passfield.getText();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -40,7 +48,11 @@ public class LoginController implements LocaleModifier {
             return;
         }
         if(credentials.verifyPassword(email,password)) {
-            //todo
+            CurrentUser.setCurrentUser(users.getUserByEmail(email));
+            CurrentUser.setEmail(email);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vanier/com/programmingpatternslia/UI/UserHome.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.getScene().setRoot(loader.load());
         }
         else {
             alert.setHeaderText(null);

@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import vanier.com.programmingpatternslia.App.Controllers.CurrentUser.CurrentUser;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.GlobalLocale;
 
 import java.util.ResourceBundle;
@@ -53,7 +54,11 @@ public class ProfileController extends BasePlateController {
         emailLBL.setText(bundle.getString("textbox.email"));
         ageLBL.setText(bundle.getString("textbox.age"));
         passLBL.setText(bundle.getString("textbox.password"));
-
+        if(CurrentUser.getCurrentUser() != null) {
+            fnameTXTBox.setText(CurrentUser.getCurrentUser().getFullName());
+            emailTXTBox.setText("");
+            ageTXTBox.setText(String.valueOf(CurrentUser.getCurrentUser().getAge()));
+        }
         if (updateBTN != null) updateBTN.setText(bundle.getString("button.update"));
         if (backBTN != null) backBTN.setText(bundle.getString("button.back"));
     }
