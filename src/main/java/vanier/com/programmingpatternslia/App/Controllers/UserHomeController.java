@@ -18,7 +18,7 @@ public class UserHomeController {
         ));
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(loader.load()));
+        stage.getScene().setRoot(loader.load());
     }
 
 
