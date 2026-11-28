@@ -7,7 +7,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.GlobalLocale;
 import vanier.com.programmingpatternslia.App.Controllers.Locale.LocaleModifier;
+import vanier.com.programmingpatternslia.DataBase.Credential.CredentialDAO;
+import vanier.com.programmingpatternslia.DataBase.User.UserDAO;
 
+import java.sql.SQLException;
 import java.util.*;
 
 public class SignUpController implements LocaleModifier {
@@ -28,6 +31,8 @@ public class SignUpController implements LocaleModifier {
     public ComboBox<String> languagecombo;
     @FXML
     public ImageView backImage;
+    public UserDAO user = UserDAO.getInstance();
+    CredentialDAO credentials = CredentialDAO.getInstance();
 
     @FXML
     public void initialize() {
@@ -82,10 +87,43 @@ public class SignUpController implements LocaleModifier {
     }
 
     @FXML
-    public void loginButtonOnClick() {
-        if (passcheckfield == null || agefield == null) return;
-
+    public void loginButtonOnClick() throws SQLException {
+        String pass = passfield.getText();
         String passcheck = passcheckfield.getText();
         String age = agefield.getText();
+        String mail = mailfield.getText();
+        String fname = userfield.getText();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        if (fname.isBlank() || mail.isBlank() || age.isBlank() || pass.isBlank() || passcheck.isBlank()) {
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill every field");
+            alert.showAndWait();
+            return;
+        }
+        if (pass.length() < 8) {
+            alert.setContentText("Password too short, needs 8 characters");
+            alert.showAndWait();
+            return;
+        }
+        if (!pass.equals(passcheck)) {
+            alert.setContentText("Passwords don't match");
+            alert.showAndWait();
+            return;
+        }
+        int userAge;
+        try { userAge = Integer.parseInt(age); }
+        catch (NumberFormatException e) {
+            alert.setContentText("Enter a valid age");
+            alert.showAndWait();
+            return;
+        }
+        if (userAge < 0 || userAge > 100) {
+            alert.setContentText("Age has to be between 0 and 100");
+            alert.showAndWait();
+            return;
+        }
+        int userId = user.createUser(fname, userAge, "PARTICIPANT");
+        credentials.createPassword(userId, mail, pass);
     }
 }

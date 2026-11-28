@@ -1,7 +1,5 @@
 package vanier.com.programmingpatternslia.DataBase.Credential;
 
-import vanier.com.programmingpatternslia.DataBase.DataBaseCore;
-
 import vanier.com.programmingpatternslia.Error.CredentialError;
 
 import java.sql.*;
@@ -12,6 +10,7 @@ public class CredentialDAO {
     private CredentialDAO(String path) {
         this.path = path;
     }
+    public static CredentialDAO getInstance() { return new CredentialDAO("jdbc:sqlite:src/main/resources/vanier.com.programming patterns/pjDataBase.db"); }
     static CredentialDAO forTesting(String url) {
         return new CredentialDAO(url);
     }
@@ -44,20 +43,19 @@ public class CredentialDAO {
     public boolean verifyPassword(String email, String password) throws SQLException {
         String sql = "SELECT * FROM CREDENTIALS WHERE Email = ?";
         try (Connection conn = DriverManager.getConnection(path);
-             PreparedStatement pstmt = conn.prepareStatement(sql);
+             PreparedStatement pstmt = conn.prepareStatement(sql)
             ) {
             pstmt.setString(1, email);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     String storedPassword = rs.getString("Password");
-                    return storedPassword != null &&
-                            storedPassword.equals(makeHashedPassword(password));
+                    return storedPassword != null && storedPassword.equals(makeHashedPassword(password));
                 }
             }
         }
         return false;
     }
-    private String makeHashedPassword(String password) {;
+    private String makeHashedPassword(String password) {
         return "P" + password.hashCode()*351+1000;
     }
 }

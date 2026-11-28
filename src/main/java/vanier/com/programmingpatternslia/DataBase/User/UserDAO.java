@@ -1,7 +1,5 @@
 package vanier.com.programmingpatternslia.DataBase.User;
 
-import vanier.com.programmingpatternslia.DataBase.Credential.CredentialDAO;
-import vanier.com.programmingpatternslia.DataBase.DataBaseCore;
 import vanier.com.programmingpatternslia.Error.UserError;
 import vanier.com.programmingpatternslia.Model.User;
 
@@ -15,25 +13,30 @@ public class UserDAO {
     private UserDAO(String path) {
         this.path = path;
     }
+    public static UserDAO getInstance() { return new UserDAO("jdbc:sqlite:src/main/resources/vanier.com.programming patterns/pjDataBase.db"); }
     static UserDAO forTesting(String url) {
         return new UserDAO(url);
     }
 
-    public void createUser(String fullName,int age,String role) throws SQLException {
-        if ((age >= 0 && age <= 100 && (role.equalsIgnoreCase("ADMIN") || role.equalsIgnoreCase("PARTICIPANT")))) {
-            String sql = "INSERT INTO USER (FullName, Age, Role) VALUES (?, ?, ?)";
+    public int createUser(String fullName, int age, String role) throws SQLException, UserError {
 
-            try (Connection conn = DriverManager.getConnection(path);
-                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        if (age < 0 || age > 100 || (!role.equalsIgnoreCase("ADMIN") &&!role.equalsIgnoreCase("PARTICIPANT")))
+            throw new UserError("Incorrect age or role");
 
-                pstmt.setString(1, fullName);
-                pstmt.setInt(2, age);
-                pstmt.setString(3, role);
+        String sql = "INSERT INTO USER (FullName, Age, Role) VALUES (?, ?, ?)";
 
-                pstmt.executeUpdate();
-            }
+        try (Connection conn = DriverManager.getConnection(path);
+             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+            pstmt.setString(1, fullName);
+            pstmt.setInt(2, age);
+            pstmt.setString(3, role);
+
+            pstmt.executeUpdate();
+
+            try (ResultSet rs = pstmt.getGeneratedKeys()) { if (rs.next()) return rs.getInt(1); }
         }
-        else throw new UserError("Incorrect age or role");
+        throw new SQLException("Could not get user ID");
     }
 
     public User getUserByEmail(String email) throws SQLException {
